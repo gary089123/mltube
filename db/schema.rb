@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612122846) do
+ActiveRecord::Schema.define(version: 20180612124407) do
 
   create_table "tubes", force: :cascade do |t|
     t.string "title"
     t.text "transcript"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video"
   end
 
 end

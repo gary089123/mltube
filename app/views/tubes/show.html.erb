@@ -9,6 +9,8 @@
   <strong>Transcript:</strong>
   <%= @tube.transcript %>
 </p>
-
+<p>
+  <%= video_tag @tube.video_url.to_s , :height =>'500',:controls =>true %>
+</p>
 <%= link_to 'Edit', edit_tube_path(@tube) %> |
 <%= link_to 'Back', tubes_path %>
