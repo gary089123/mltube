@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tubes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Transcript</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tubes.each do |tube| %>
+      <tr>
+        <td><%= tube.title %></td>
+        <td><%= tube.transcript %></td>
+        <td><%= link_to 'Show', tube %></td>
+        <td><%= link_to 'Edit', edit_tube_path(tube) %></td>
+        <td><%= link_to 'Destroy', tube, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tube', new_tube_path %>
