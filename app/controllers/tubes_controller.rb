@@ -25,10 +25,10 @@ class TubesController < ApplicationController
   # POST /tubes.json
   def create
     @tube = Tube.new(tube_params)
-
     respond_to do |format|
       if @tube.save
-        format.html { redirect_to @tube, notice: 'Tube was successfully created.' }
+        flash[:success] = 'Tube was successfully created.'
+        format.html { redirect_to @tube }
         format.json { render :show, status: :created, location: @tube }
       else
         format.html { render :new }
@@ -42,7 +42,8 @@ class TubesController < ApplicationController
   def update
     respond_to do |format|
       if @tube.update(tube_params)
-        format.html { redirect_to @tube, notice: 'Tube was successfully updated.' }
+        flash[:success] = 'Tube was successfully Update.'
+        format.html { redirect_to @tube }
         format.json { render :show, status: :ok, location: @tube }
       else
         format.html { render :edit }

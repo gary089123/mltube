@@ -4,28 +4,29 @@
       <h2><%= pluralize(tube.errors.count, "error") %> prohibited this tube from being saved:</h2>
 
       <ul>
-      <% tube.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% tube.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :tube_title %>
+    <%= form.text_field :title, id: :tube_title, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :transcript %>
-    <%= form.text_area :transcript, id: :tube_transcript %>
+    <%= form.text_area :transcript, id: :tube_transcript, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%=form.file_field :video%>
+  <div class="form-group">
+    <%= form.file_field :video %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit '上傳', :class => 'btn btn-primary' %>
+  </div>
   </div>
 <% end %>
